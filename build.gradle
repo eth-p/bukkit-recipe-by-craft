@@ -1,0 +1,33 @@
+plugins {
+	id 'java-library'
+	id 'dev.ethp.bukkit' version '0.1.6'
+}
+
+dependencies {
+	compileOnly group: 'org.jetbrains', name: 'annotations', version: '16.0.1'
+	bukkitApi()
+}
+
+group 'dev.ethp.bukkit'
+version = '1.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+bukkit {
+	name "recipe-by-craft"
+	description "Only unlock recipes once you have crafted them."
+	website 'https://github.com/eth-p/bukkit-recipe-by-craft/'
+	main 'dev.ethp.recipebycraft.Plugin'
+
+	author 'eth-p'
+
+	api {
+		version '1.14'
+	}
+
+	permission 'recipebycraft.bypass', {
+		description 'Allows recipes to be discovered the normal way.'
+		value = NONE
+	}
+}
